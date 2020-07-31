@@ -3,25 +3,25 @@ import React, { Component, createContext } from 'react';
 const state = {
   isLightTheme: true,
   light: { syntax: '#555', ui: '#ddd', bg: '#eee' },
-  dark: { syntax: '#ddd', ui: '#333', bg: '#555'}
+  dark: { syntax: '#ddd', ui: '#333', bg: '#555' }
 }
 
-export const ThemeContext = createContext({...state, toggleTheme: () => {}});
+export const ThemeContext = createContext({ ...state, toggleTheme: () => { } });
 
 class ThemeContextProvider extends Component {
   state = state;
 
-  toggleTheme= () => {
+  toggleTheme = () => {
     this.setState({ isLightTheme: !this.state.isLightTheme });
   }
 
-  render() { 
+  render() {
     return (
-      <ThemeContext.Provider value={{...this.state, toggleTheme: this.toggleTheme}}>
+      <ThemeContext.Provider value={{ ...this.state, toggleTheme: this.toggleTheme }}>
         {this.props.children}
       </ThemeContext.Provider>
     );
   }
 }
- 
+
 export default ThemeContextProvider;
