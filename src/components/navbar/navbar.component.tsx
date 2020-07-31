@@ -1,17 +1,21 @@
-import React, { Component} from 'react';
+import React, { Component } from 'react';
 
-import { ThemeContext } from '../../context/theme.context';
+import { ThemeContext } from 'context/theme.context';
 
-class Navbar extends Component {
+interface NavbarProps {
+  appName: string;
+}
+
+class Navbar extends Component<NavbarProps> {
 
   render() {
-    return ( 
-      <ThemeContext.Consumer>{(context) => {
+    return (
+      <ThemeContext.Consumer>{(context: any) => {
         const { isLightTheme, light, dark } = context;
         const theme = isLightTheme ? light : dark;
         return (
           <nav style={{ background: theme.ui, color: theme.syntax }}>
-            <h1>Context App</h1>
+            <h1>{this.props.appName}</h1>
             <ul>
               <li>Home</li>
               <li>About</li>
@@ -23,5 +27,5 @@ class Navbar extends Component {
     );
   }
 }
- 
+
 export default Navbar;

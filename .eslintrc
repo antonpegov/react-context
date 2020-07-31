@@ -1,0 +1,12 @@
+{
+  "extends": ["react-app"],
+  "rules": {
+    "arrow-body-style": "error",
+    "import/newline-after-import": "error",
+    "import/no-relative-parent-imports": "error",
+    "no-console": "warn",
+    "object-shorthand": "error",
+    "prefer-arrow-callback": "error",
+    "prefer-destructuring": "error"
+  }
+}

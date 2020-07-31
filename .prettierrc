@@ -1,0 +1,19 @@
+{
+  "trailingComma": "all",
+  "tabWidth": 2,
+  "singleQuote": true,
+  "overrides": [
+    {
+      "files": "*.effects.ts",
+      "options": {
+        "printWidth": 120
+      }
+    },
+    {
+      "files": "*.actions.ts",
+      "options": {
+        "printWidth": 110
+      }
+    }
+  ]
+}
