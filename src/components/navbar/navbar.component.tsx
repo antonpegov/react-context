@@ -19,7 +19,8 @@ class Navbar extends Component<NavbarProps> {
             <ul>
               <li>Home</li>
               <li>About</li>
-              <li>Contact</li>
+              <li>Dark Theme</li>
+              <li>Bright Theme</li>
             </ul>
           </nav>
         )
