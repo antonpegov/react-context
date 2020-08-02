@@ -1,5 +1,7 @@
 {
-  "extends": ["react-app"],
+  "extends": [
+    "react-app"
+  ],
   "rules": {
     "arrow-body-style": "error",
     "import/newline-after-import": "error",
@@ -7,6 +9,7 @@
     "no-console": "warn",
     "object-shorthand": "error",
     "prefer-arrow-callback": "error",
-    "prefer-destructuring": "error"
+    "prefer-destructuring": "error",
+    "max-len": 80
   }
 }

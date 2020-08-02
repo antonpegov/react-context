@@ -1,6 +1,11 @@
+// Use Context in class component:
+
 import React, { Component } from 'react';
 
-import { ThemeContext } from 'context/theme.context';
+import './navbar.component.scss';
+
+import { AppContext } from 'context/app.context';
+import { Theme } from 'shared/models/theme.enum';
 
 interface NavbarProps {
   appName: string;
@@ -10,21 +15,21 @@ class Navbar extends Component<NavbarProps> {
 
   render() {
     return (
-      <ThemeContext.Consumer>{(context: any) => {
-        const { isLightTheme, light, dark } = context;
-        const theme = isLightTheme ? light : dark;
+      <AppContext.Consumer>{(context: any) => {
+        const { isLightTheme, light, dark, toggleTheme, theme } = context;
+        const nextTheme = isLightTheme ? Theme.Dark : Theme.Light;
+
         return (
-          <nav style={{ background: theme.ui, color: theme.syntax }}>
+          <nav className={`Navbar ${theme}Theme`}>
             <h1>{this.props.appName}</h1>
-            <ul>
-              <li>Home</li>
-              <li>About</li>
-              <li>Dark Theme</li>
-              <li>Bright Theme</li>
+            <ul className="Navbar-Menu">
+              <li className="Navbar-MenuItem">Home</li>
+              <li className="Navbar-MenuItem">About</li>
+              <li className="Navbar-MenuItem" onClick={toggleTheme}>{nextTheme} Theme</li>
             </ul>
           </nav>
         )
-      }}</ThemeContext.Consumer>
+      }}</AppContext.Consumer>
     );
   }
 }

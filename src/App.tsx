@@ -1,16 +1,17 @@
 import React from 'react';
 
+import AppContextProvider from 'context/app.context';
+
 import Navbar from 'components/navbar/navbar.component';
-import ToDoList from 'components/todo-list/todo-list.component';
-import ThemeContextProvider from 'context/theme.context';
+import Todo from 'components/todo/todo.component';
 
 function App() {
   return (
     <div className="App">
-      <ThemeContextProvider>
+      <AppContextProvider>
         <Navbar appName="Context API" />
-        <ToDoList />
-      </ThemeContextProvider>
+        <Todo />
+      </AppContextProvider>
     </div>
   );
 }
