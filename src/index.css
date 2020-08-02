@@ -12,4 +12,10 @@ body {
   max-width: 400px;
   margin: 30px auto;
   text-align: center;
+
+}
+
+input {
+  margin: 3px;
+  padding: 2px;
 }

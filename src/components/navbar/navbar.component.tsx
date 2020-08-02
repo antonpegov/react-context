@@ -16,7 +16,7 @@ class Navbar extends Component<NavbarProps> {
   render() {
     return (
       <AppContext.Consumer>{(context: any) => {
-        const { isLightTheme, light, dark, toggleTheme, theme } = context;
+        const { isLightTheme, toggleTheme, theme } = context;
         const nextTheme = isLightTheme ? Theme.Dark : Theme.Light;
 
         return (

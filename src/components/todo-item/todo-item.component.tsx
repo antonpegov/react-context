@@ -1,13 +1,15 @@
-import * as React from 'react';
+import React from 'react';
 
 import './todo-item.component.scss';
+import { ToDo } from 'shared/models/todo.model';
 
-class ToDoItem extends React.Component {
-  render() {
-
-
-    return (<div className="TodoItem">Item</div>);
-  }
+interface TodoItemProps {
+  todo: ToDo
 }
 
-export default ToDoItem;
+const TodoItem: React.FC<TodoItemProps> = ({ todo }) => {
+
+  return (<div className="TodoItem">{todo.name}</div>);
+}
+
+export default TodoItem;

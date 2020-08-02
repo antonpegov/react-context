@@ -20,7 +20,7 @@ const AddTodo: React.FC<AddTodoProps> = ({ addTodo }) => {
 
       return (
         <form onSubmit={handleAddTodo} >
-          <label htmlFor="">New ToDo:</label>
+          <label htmlFor="">Add new:</label>
           <input type="text" name="todo" ref={input} required />
           <input type="submit" />
         </form>

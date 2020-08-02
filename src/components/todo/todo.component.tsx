@@ -8,6 +8,7 @@ import './todo.component.scss';
 import { ToDo } from 'shared/models/todo.model';
 import AddTodo from 'components/add-todo/add-todo.component';
 import { AppContext } from 'context/app.context';
+import TodoItem from 'components/todo-item/todo-item.component';
 
 const Todo = () => {
   const [toDos, setToDos] = useState<ToDo[]>([
@@ -29,7 +30,11 @@ const Todo = () => {
   return (
     <div className={`Todo ${theme}Theme`}>
       <ul className="Todo-List">
-        {toDos.map((toDo: any) => <li key={toDo.id} className="Todo-ListItem">{toDo.name}</li>)}
+        {toDos.map((toDo: any) =>
+          <li key={toDo.id} className="Todo-ListItem">
+            <TodoItem todo={toDo} />
+          </li>)
+        }
       </ul>
 
       <AddTodo addTodo={addToDo} />
